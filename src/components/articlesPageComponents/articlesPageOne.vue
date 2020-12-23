@@ -1,7 +1,8 @@
 <template>
   <div>
     <h2>Hello and welcome page one !!!</h2>
-    <div> {{billets}} </div>
+    <div> {{billets1.title}} </div>
+    <div> {{billets1.content}} </div>
   </div>
 </template>
 
@@ -13,9 +14,10 @@ export default {
 name: "page1",
   data(){
     return{
-      billets: null,
-
-
+      billets0: "",
+      billets1: "",
+      comment0: "",
+      comment1: "",
     }
   },
   methods: {
@@ -25,8 +27,13 @@ name: "page1",
     axios.get('https://127.0.0.1:8000/api/billets')
         .then(response => {
               console.log(response);
-              this.billets = response.data["hydra:member"][0].content;
+              this.billets0 = response.data["hydra:member"][0];
+              this.billets1 = response.data["hydra:member"][1];
+
     });
+
+    axios.get('https://127.0.0.1:8000/api/comments')
+    .then(response => {console.log(response)});
   }
 }
 </script>
