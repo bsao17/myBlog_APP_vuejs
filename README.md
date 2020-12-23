@@ -1,5 +1,5 @@
 
-Here is the same project that myBlog_APP_angular but with vue.js and axios for "myBlog_API" request.
+Here is the same project that myBlog_APP_angular but with vue.js and axios librairies for "myBlog_API" request.
 
 # myblog
 
